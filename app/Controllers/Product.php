@@ -10,8 +10,8 @@ class Controllers_Product extends Controllers_Core_Base{
     public function editAction(){
         $productModel = new models_Product();
         $id = $this->getRequest()->get('id');
+        
         if($id){
-            // $productModel->load($id);
             if(!$productModel->load($id)){
                 throw new Exception("Invalid Product ID");
             }
